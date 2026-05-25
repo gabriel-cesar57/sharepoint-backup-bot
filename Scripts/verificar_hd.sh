@@ -19,7 +19,7 @@ if [ "$USO" -ge "$LIMITE" ]; then
     if [ "$DATA_ALERTA" != "$DATA_ATUAL" ]; then
         echo "ALERTA: O HD de backup está com $USO% de uso em $(date)" \
         | mail -s "ALERTA: HD BACKUP ACIMA DE 80%" \
-        gabriel.cesar@intermetro.com.br coordenacao.pdi@intermetro.com.br pdi@intermetro.com.br
+        seu@email.com
 
         echo "$DATA_ATUAL" > $ARQUIVO_CONTROLE
     fi
