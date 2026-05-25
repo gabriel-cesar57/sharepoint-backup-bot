@@ -8,16 +8,16 @@ mkdir -p /var/log/rclone
 
 declare -A SITES
 SITES=(
-#["AssistenciaTecnica"]="assistencia-tecnica:"
-#["Comercial"]="comercial:"
-#["Fabricacao"]="fabricacao:"
-#["Financeiro"]="financeiro:"
-#["Laboratorio"]="laboratorio:"
-#["Logistica"]="logistica:"
+["AssistenciaTecnica"]="assistencia-tecnica:"
+["Comercial"]="comercial:"
+["Fabricacao"]="fabricacao:"
+["Financeiro"]="financeiro:"
+["Laboratorio"]="laboratorio:"
+["Logistica"]="logistica:"
 ["PDI"]="pdi:"
-#["Qualidade"]="qualidade:"
-#["RH"]="rh:"
-#["TI"]="ti:"
+["Qualidade"]="qualidade:"
+["RH"]="rh:"
+["TI"]="ti:"
 )
 
 ERRO=0
@@ -47,5 +47,5 @@ do
 done
 
 if [ $ERRO -ne 0 ]; then
-echo "Backup FULL SharePoint FALHOU em $(date)" | mail -s "ERRO BACKUP FULL SHAREPOINT" gabriel.cesar@intermetro.com.br coordenacao.pdi@intermetro.com.br pdi@intermetro.com.br
+echo "Backup FULL SharePoint FALHOU em $(date)" | mail -s "ERRO BACKUP FULL SHAREPOINT" seu@email.com
 fi
