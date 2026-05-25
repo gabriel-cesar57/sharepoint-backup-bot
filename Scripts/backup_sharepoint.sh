@@ -1,11 +1,14 @@
 #!/bin/bash
 # Script para realizar backup do SharePoint usando rclone e enviar email em caso de erros
 
+#variavel data e log
 DATE=$(date +%F)
 LOG="/var/log/rclone/backup_$DATE.log"
 
+#cria os diretórios de logs
 mkdir -p /var/log/rclone
 
+# Sites do Sharepoint que deseja realizar o backup (nomes devem ser iguais ao apresentados no Sharepoint Admin)
 declare -A SITES
 SITES=(
 ["AssistenciaTecnica"]="assistencia-tecnica"
@@ -20,8 +23,10 @@ SITES=(
 ["TI"]="ti"
 )
 
+#variavel erro, inicia nula
 ERRO=0
 
+#inicia a sincronização e copia dos dados de cada site mencionado anteriormente. Se houver erros, adiciona os detalhes no log.
 for SITE in "${!SITES[@]}"
 do
     echo "Backup de $SITE iniciado..."
@@ -45,6 +50,7 @@ do
     echo "Backup de $SITE finalizado."
 done
 
+#caso erro, enviar log por email
 if [ $ERRO -ne 0 ]; then
 {
     echo "Backup SharePoint FALHOU em $(date)"
@@ -52,5 +58,5 @@ if [ $ERRO -ne 0 ]; then
     echo "Erros encontrados:"
     echo "-----------------------------------"
     grep -i "error\|failed" "$LOG"
-} | mail -s "ERRO BACKUP SHAREPOINT" gabriel.cesar@intermetro.com.br pdi@intermetro.com.br coordenacao.pdi@intermetro.com.br
+} | mail -s "ERRO BACKUP SHAREPOINT" seu@email.com
 fi
