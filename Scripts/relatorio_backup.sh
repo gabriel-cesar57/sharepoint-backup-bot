@@ -100,4 +100,4 @@ echo "Subject: $ASSUNTO"
 echo "Content-Type: text/html"
 echo ""
 cat "$RELATORIO"
-) | msmtp --file=$HOME/.msmtprc  gabriel.cesar@intermetro.com.br
+) | msmtp --file=$HOME/.msmtprc  seu@email.com
