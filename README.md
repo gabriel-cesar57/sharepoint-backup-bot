@@ -29,16 +29,6 @@ Este documento descreve a rotina automatizada de backup do SharePoint utilizando
 
 ---
 
-## Sites Configurados
-
-| Site | Remote |
-|---|---|
-| PDI | pdi: |
-| RH | rh: |
-| TI | ti: |
-
----
-
 ## Scripts
 
 ### backup_sharepoint.sh
