@@ -34,7 +34,7 @@ Este documento descreve a rotina automatizada de backup do SharePoint utilizando
 ### backup_sharepoint.sh
 
 - Backup incremental diário
-- Versionamento
+- Versionamento de arquivos
 
 ### full_sharepoint.sh
 
@@ -42,8 +42,11 @@ Este documento descreve a rotina automatizada de backup do SharePoint utilizando
 
 ### retencao_sharepoint.sh
 
-- Limpeza automática
+- Limpeza automática caso ultrapassar 30 dias incrementais e 60 dias full
+  
+### verificar_hd.sh
 
+- Alerta se hd ultrapassar 80% de uso
 ---
 
 ## CRON
@@ -59,8 +62,8 @@ Este documento descreve a rotina automatizada de backup do SharePoint utilizando
 
 | Tipo | Dias |
 |---|---|
-| Incremental | 14 |
-| FULL | 30 |
+| Incremental | 30 |
+| FULL | 60 |
 
 ---
 
