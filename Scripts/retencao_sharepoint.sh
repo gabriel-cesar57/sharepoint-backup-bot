@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script para realizar limpeza de backups antigos do SharePoint, mantendo apenas os últimos 30 incrementais e 60 FULLs
+# Script para realizar limpeza de backups antigos do SharePoint, mantendo apenas os últimos 30 dias incrementais e 60 dias FULLs
 
 # caminhos
 INC="/mnt/backup_hd/sharepoint/versionados"
